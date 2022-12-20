@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const GET = 'space-travelers-react/rocketsReducer/GET_ROCKET';
+const GET = 'space-travelers-react/rocketsReducer/GET';
 
 // Reducer
 const rocketsReducer = (state = [], action) => {
