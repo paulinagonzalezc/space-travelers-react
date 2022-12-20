@@ -39,7 +39,11 @@ export const bookRocket = (payload) => ({
 export const fetchRockets = createAsyncThunk(GET, async () => {
   const response = await fetch('https://api.spacexdata.com/v3/rockets');
   const data = await response.json();
-  return data;
+  const rockets = data.map((rocket) => {
+    const result = rocket.reserved !== undefined;
+    return { ...rocket, reserved: result };
+  });
+  return rockets;
 });
 
 export default rocketsReducer;

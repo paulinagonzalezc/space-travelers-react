@@ -5,8 +5,12 @@ import { bookRocket } from '../redux/rockets/rockets';
 
 const Rocket = (props) => {
   const {
-    id, name, description, image, reserved,
+    id, name, description, image,
   } = props;
+  let { reserved } = props;
+  if (reserved === undefined) {
+    reserved = false;
+  }
   const dispatch = useDispatch();
   const reserveRocket = () => {
     dispatch(bookRocket(id));
@@ -15,10 +19,10 @@ const Rocket = (props) => {
     <div className="rocket-container">
       <img className="rocket-image" alt="rocket" src={image} />
       <div className="rocket-details">
-        <h2>{name}</h2>
-        <p className="rocket-details">
+        <h2 className="rocket-title">{name}</h2>
+        <p className="rocket-description">
           {reserved && (
-          <span>
+          <span className="rocket-badge">
             Reserved
           </span>
           )}
