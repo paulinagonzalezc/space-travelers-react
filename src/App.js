@@ -6,6 +6,7 @@ import Missions from './pages/Missions';
 import MyProfile from './pages/MyProfile';
 import './styling/Nav.css';
 import './styling/MyProfile.css';
+import './styling/Rockets.css';
 
 const App = () => (
   <Router>
