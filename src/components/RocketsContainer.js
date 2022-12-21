@@ -4,13 +4,15 @@ import { fetchRockets } from '../redux/rockets/rockets';
 import Rocket from './Rocket';
 
 const RocketsContainer = () => {
-  const rockets = useSelector((state) => state.rockets);
 
+  const rockets = useSelector((state) => state.rockets);
+const { length } = rockets;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchRockets());
-  }, [fetchRockets]);
-
+    if (length === 0) {
+      dispatch(fetchRockets());
+    }
+  }, [dispatch]);
   return (
     <div>
       {
@@ -19,7 +21,9 @@ const RocketsContainer = () => {
           key={rocket.id}
           name={rocket.rocket_name}
           description={rocket.description}
-          image={rocket.flickr_images[0]}
+          image={rocket.flickr_images}
+          id={rocket.id}
+          reserved={rocket.reserved}
         />
       ))
     }

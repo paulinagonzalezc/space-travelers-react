@@ -1,19 +1,10 @@
 import React from 'react';
+import RocketsProfile from '../components/RocketsProfile';
 
 const MyProfile = () => (
   <div className="profile-container">
-    <div className="reserve-cotainer-top">
-      <h1>My Rockets</h1>
-      <div className="reserve-cotainer">
-        <p>No Reserved Rockets</p>
-      </div>
-    </div>
-    <div className="reserve-container-top">
-      <h1>My Missions</h1>
-      <div className="reserve-cotainer">
-        <p>No Reserved Rockets</p>
-      </div>
-    </div>
+    <RocketsProfile />
+    <div className="missions" />
   </div>
 );
 
