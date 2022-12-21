@@ -7,10 +7,13 @@ import { fetchMissions } from '../redux/missions/missions';
 import Mission from './Misson';
 
 const MissionsContainer = () => {
-  const missionsObj = useSelector((state) => state.missionsReducer);
+  const missionObj = useSelector((state) => state.missions.missions);
+  const { length } = missionObj;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchMissions());
+    if (length === 0) {
+      dispatch(fetchMissions());
+    }
   }, [dispatch]);
 
   return (
@@ -25,12 +28,13 @@ const MissionsContainer = () => {
           </tr>
         </thead>
         <tbody>
-          {missionsObj.map((m) => (
+          {missionObj.map((m) => (
             <Mission
-              key={m.missionId}
-              missionId={m.missionId}
-              missionName={m.missionName}
+              key={m.mission_id}
+              missionId={m.mission_id}
+              missionName={m.mission_name}
               description={m.description}
+              reserved={m.reserved}
             />
           ))}
         </tbody>

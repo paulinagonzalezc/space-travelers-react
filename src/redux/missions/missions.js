@@ -1,28 +1,36 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const GET = 'SPACE-TRAVELERS-REACT/missons/GET';
-
-const initialState = [];
-
-const missionsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case `${GET}/fulfilled`:
-      return Object.keys(action.payload).map((key) => ({
-        missionId: action.payload[key].mission_id,
-        missionName: action.payload[key].mission_name,
-        description: action.payload[key].description,
-      }));
-    default:
-      return state;
-  }
-};
+const initialState = { missions: [] };
 
 const URL = 'https://api.spacexdata.com/v3/missions';
 
-export const fetchMissions = createAsyncThunk(GET, async () => {
+export const fetchMissions = createAsyncThunk('GET/fetchMissions/fulfilled', async () => {
   const response = await fetch(URL);
   const data = await response.json();
   return data;
 });
 
-export default missionsReducer;
+const missionSlice = createSlice({
+  name: 'GET',
+  initialState,
+  reducers: {
+    toogleReserve: (state, { payload }) => {
+      state.missions = state.missions.map((mission) => { // eslint-disable-line no-param-reassign
+        if (mission.mission_id === payload) {
+          return { ...mission, reserved: !mission.reserved };
+        } return mission;
+      });
+    },
+  }, /* eslint-disable no-param-reassign */
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMissions.fulfilled, (state, { payload }) => {
+        state.missions = payload.map((x) => ({ ...x, reserved: false }));
+      });
+  },
+  /* eslint-enable no-param-reassign */
+});
+
+export const { toogleReserve } = missionSlice.actions;
+
+export default missionSlice;
