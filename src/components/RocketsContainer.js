@@ -5,9 +5,12 @@ import Rocket from './Rocket';
 
 const RocketsContainer = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
+  const { length } = rockets;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchRockets());
+    if (length === 0) {
+      dispatch(fetchRockets());
+    }
   }, [dispatch]);
 
   return (
@@ -18,7 +21,7 @@ const RocketsContainer = () => {
           key={rocket.id}
           name={rocket.rocket_name}
           description={rocket.description}
-          image={rocket.flickr_images[0]}
+          image={rocket.flickr_images}
           id={rocket.id}
           reserved={rocket.reserved}
         />
