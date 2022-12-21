@@ -4,11 +4,12 @@ import { fetchRockets } from '../redux/rockets/rockets';
 import Rocket from './Rocket';
 
 const RocketsContainer = () => {
-  const rockets = useSelector((state) => state.rocketsReducer);
+  const rockets = useSelector((state) => state.rockets);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRockets());
-  }, [dispatch]);
+  }, [fetchRockets]);
 
   return (
     <div>
