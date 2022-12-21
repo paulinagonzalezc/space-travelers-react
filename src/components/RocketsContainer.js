@@ -19,6 +19,8 @@ const RocketsContainer = () => {
           name={rocket.rocket_name}
           description={rocket.description}
           image={rocket.flickr_images[0]}
+          id={rocket.id}
+          reserved={rocket.reserved}
         />
       ))
     }
