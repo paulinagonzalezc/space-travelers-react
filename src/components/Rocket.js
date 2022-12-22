@@ -7,10 +7,6 @@ const Rocket = (props) => {
   const {
     id, name, description, image, reserved,
   } = props;
-  // let { reserved } = props;
-  // if (reserved === undefined) {
-  //   reserved = false;
-  // }
   const dispatch = useDispatch();
   const reserveRocket = () => {
     dispatch(bookRocket(id));
