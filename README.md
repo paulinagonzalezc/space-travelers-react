@@ -1,7 +1,6 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
   <img src="./murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
@@ -39,8 +38,6 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
   <summary>Client</summary>
   <ul>
@@ -48,23 +45,7 @@
   </ul>
 </details>
 
-<!-- <details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details> -->
-
 ### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
 
 - **Reserve and cancel rockets reservations**
 - **Book and cancel missions booking**
@@ -74,9 +55,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://space-travelers-hub-oo7r.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,19 +102,16 @@ To run tests, run the following command:
 
 ```sh
   npm run test
+  and then run all tests
 ```
 
 ### Deployment
 
 You can deploy this project using:
 
-<!--
-Example:
-
 ```sh
-
+npm run deploy
 ```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,11 +123,11 @@ Example:
 - Twitter: [@paulinagzzc](https://twitter.com/paulinagzzc)
 - LinkedIn: [Paulina Gonzalez Cantu](https://www.linkedin.com/in/paulina-gonzalez-cantu/)
 
-👤 **Author2**
+👤 **David Zambrano**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@yayoamigo](https://github.com/yayoamigo)
+- Twitter: [@carpediem0011](https://twitter.com/carpediem0011)
+- LinkedIn: [David Zambrano](https://www.linkedin.com/in/david-zambrano-corral-b87a4198/))
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,9 +154,7 @@ If you like this project please give it a star 😁🌟✨
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+We would like to thank Microverse for the project UI.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
