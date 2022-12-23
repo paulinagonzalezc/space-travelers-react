@@ -32,7 +32,7 @@ describe('Rocket component test', () => {
 
   afterEach(cleanup);
 
-  it('increments counter', async () => {
+  it('Rocket reserve button test', async () => {
     const { getByTestId } = render(
       <Provider store={store}>
         <BrowserRouter>
