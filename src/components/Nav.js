@@ -6,7 +6,7 @@ const Nav = () => (
   <nav className="nav-bar">
     <div className="header">
       <img className="logo" src={Logo} alt="Logo" />
-      <div className="nav-title">Space Travelers Hub</div>
+      <div className="nav-title" id="nav">Space Travelers Hub</div>
     </div>
     <ul className="nav-links">
       <li className="nav-link"><NavLink to="/">Rockets</NavLink></li>

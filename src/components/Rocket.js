@@ -26,9 +26,9 @@ const Rocket = (props) => {
           {description}
         </p>
         {!reserved ? (
-          <button type="button" className="rocket-reserve-btn" onClick={reserveRocket}>Reserve Rocket</button>
+          <button type="button" className="rocket-reserve-btn" onClick={reserveRocket} data-testid="button-up">Reserve Rocket</button>
         ) : (
-          <button type="button" className="rocket-cancel-btn" onClick={reserveRocket}>Cancel Reserve</button>
+          <button type="button" className="rocket-cancel-btn" onClick={reserveRocket} data-testid="button-cancel">Cancel Reserve</button>
         )}
       </div>
     </div>

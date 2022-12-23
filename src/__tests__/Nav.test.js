@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
@@ -15,7 +15,20 @@ describe('Nav component test', () => {
         ,
       </Provider>,
     );
-
     expect(nav).toMatchSnapshot();
+  });
+
+  test('Get element in component', () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Nav />
+        </BrowserRouter>
+        ,
+      </Provider>,
+    );
+    const heading = screen.getByText(/Space Travelers Hub/);
+    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveClass('nav-title');
   });
 });

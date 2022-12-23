@@ -18,6 +18,7 @@ Object {
           />
           <div
             class="nav-title"
+            id="nav"
           >
             Space Travelers Hub
           </div>
@@ -80,6 +81,7 @@ Object {
         />
         <div
           class="nav-title"
+          id="nav"
         >
           Space Travelers Hub
         </div>

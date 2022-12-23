@@ -29,6 +29,7 @@ Object {
           </p>
           <button
             class="rocket-reserve-btn"
+            data-testid="button-up"
             type="button"
           >
             Reserve Rocket
@@ -63,6 +64,7 @@ Object {
         </p>
         <button
           class="rocket-reserve-btn"
+          data-testid="button-up"
           type="button"
         >
           Reserve Rocket

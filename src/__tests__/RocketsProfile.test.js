@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
@@ -17,5 +17,9 @@ describe('RocketsProfile component test', () => {
     );
 
     expect(rocketsProfile).toMatchSnapshot();
+    const title = screen.getByText(/My Rockets/);
+    expect(title).toBeInTheDocument();
+    expect(title).toHaveClass('profile-rockets-title');
+    expect(title).toHaveTextContent('My Rockets');
   });
 });
